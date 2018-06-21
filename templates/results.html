@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Possible diseases:</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+<ul>
+	{% for key,value in diseases.items() %}
+		{% if value > 2 %}
+		<li style = ""><strong>{{key}}</strong>  <span style="float:right; font-size: 0.65em;">{{value}} matches</span></li>
+		{% endif %}
+	{% endfor %}
+</ul>
+{% endblock %}
